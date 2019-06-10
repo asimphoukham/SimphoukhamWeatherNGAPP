@@ -1,5 +1,5 @@
 export interface IWeather {
-  lon: number;
+ /*  lon: number;
   lat: number;
   weatherMain: string;
   description: string;
@@ -16,8 +16,15 @@ export interface IWeather {
   dt: number;
   country: string;
   timezone: number;
-  id: number;
+  id: number; */
   name: string;
+  temp: number;
+  windSpeed: number;
+  humidity: number;
+  temp_max: number;
+  temp_min: number;
+  visibility: number;
+  description: string;
 }
 export interface IForecast {
   temp: number;
