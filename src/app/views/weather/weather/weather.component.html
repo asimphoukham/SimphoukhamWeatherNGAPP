@@ -1,11 +1,37 @@
-<p>
-  weather works!
-</p>
-{{weatherData?.name}}
-{{weatherData?.temp}}
-{{weatherData?.windSpeed}} 
-{{weatherData?.humidity}}
-{{weatherData?.temp_max}}
-{{weatherData?.temp_min}}
-{{weatherData?.visibility}}
-{{weatherData?.description}}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4 mt-3">(DATE WILL GO HERE)<!--  <app-date-time></app-date-time>  --></div>
+    <div class="col-4 mt-4">
+      <h1>Weather App</h1>
+    </div>
+    <div class="col-4 right"> <app-search-bar></app-search-bar> </div>
+  </div>
+</div>
+<!-------------------------Display Forecast below here---------------------------------------->
+<div class="container-fluid forecast">
+<!--  <app-forecast></app-forecast> -->
+<div class="row">
+  <div class="col"></div>
+    <div class="col left">(City Name) {{weatherData?.name}} 
+      (Description) {{weatherData?.description}} 
+    </div>
+    <div class="col left">
+      <div class="row">
+        <div class="col">(Icon)</div>
+      </div>
+    </div>
+    <div class="col right">(Temperature) {{weatherData?.temp}}
+      <div class="row"><div class="col">(min) {{weatherData?.temp_min}} | (max) {{weatherData?.temp_max}}</div></div>
+<div class="row"><div class="col">(visibility) {{weatherData?.visibility}} </div></div>
+      <div class="row">
+        <div class="col">(Humidity) {{weatherData?.humidity}} | (Wind) {{weatherData?.windSpeed}} </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+  
+</div>
+<!------------------------Display Extended Forecast below here-------------------------------->
+<div class="container-fluid extForecast d-flex justify-content-center">
+ <!--  <app-ext-forecast></app-ext-forecast> -->
+</div>

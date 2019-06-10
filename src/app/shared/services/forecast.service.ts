@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 import { IForecast } from '../interface/iweather';
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'
