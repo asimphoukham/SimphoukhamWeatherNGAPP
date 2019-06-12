@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './views/weather/weather/weather.component';
 import { SearchBarComponent } from './views/search-bar/search-bar.component';
+import {CardModule} from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SearchBarComponent } from './views/search-bar/search-bar.component';
     AccordionModule,
     ButtonModule,
     InputTextModule,
+    CardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

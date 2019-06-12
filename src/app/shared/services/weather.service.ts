@@ -9,7 +9,8 @@ export class WeatherService {
   private wData: IWeather;
   private urlWeather = 'weather?q=';
   constructor(private dataService: DataService) { }
-  async getWeatherData(city: string) {
+  async getWeatherData(city: string) {  // try, catch
+    try{
     await this.dataService
       .getUrl(this.urlWeather + city)
       .toPromise()
@@ -21,6 +22,9 @@ export class WeatherService {
     console.log('This is APIDATA --###------+++===>>>', this.apiData);
     /*  return this.apiData; */
     return this.parseData(this.apiData);
+    } catch{
+      alert('There was an error');
+    }
   }
   parseData(pData: any) {
     this.wData = {

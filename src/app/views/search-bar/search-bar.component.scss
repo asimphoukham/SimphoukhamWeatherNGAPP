@@ -1,7 +1,14 @@
 .success{
-    background-color: green;
+    background-color: #2c182c;
+    max-width: 100px;
 }
 
 input{
-    width: 332px;
+    min-width: 241px;
+    text-align: center;
+}
+
+button{
+    font-weight: bold;
+    font-size: 15px;
 }

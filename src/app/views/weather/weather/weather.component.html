@@ -1,37 +1,61 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-4 mt-3">(DATE WILL GO HERE)<!--  <app-date-time></app-date-time>  --></div>
-    <div class="col-4 mt-4">
-      <h1>Weather App</h1>
+    <div class="col-lg mt-3">(DATE WILL GO HERE)
+      <!--  <app-date-time></app-date-time>  -->
     </div>
-    <div class="col-4 right"> <app-search-bar></app-search-bar> </div>
+    <div class="col-lg mt-4">
+      <h1>Weather</h1>
+    </div>
+    <div class="col-lg py-4 right">
+      <app-search-bar></app-search-bar>
+    </div>
   </div>
 </div>
 <!-------------------------Display Forecast below here---------------------------------------->
-<div class="container-fluid forecast">
-<!--  <app-forecast></app-forecast> -->
-<div class="row">
-  <div class="col"></div>
-    <div class="col left">(City Name) {{weatherData?.name}} 
-      (Description) {{weatherData?.description}} 
+<div class="container-fluid mt-4">
+  <!--  <app-forecast></app-forecast> -->
+  <div class="row">
+    <!--   <div class="col"></div> -->
+    <div class="col-md-4 center">
+      <h2>{{weatherData?.name}}</h2>
+      <div class="icon">(Icon)</div>
+      <h3>{{weatherData?.description}} </h3>
     </div>
-    <div class="col left">
+    <!--     <div class="col-lg left">
       <div class="row">
-        <div class="col">(Icon)</div>
+        <div class="col-lg"></div>
       </div>
+    </div> -->
+    <div class="col-md-4 center py-5">
+      <h3>{{weatherData?.temp}}</h3>
+      <h3> [Max] {{weatherData?.temp_max}}</h3>
+      <h3> [Min] {{weatherData?.temp_min}}</h3>
     </div>
-    <div class="col right">(Temperature) {{weatherData?.temp}}
-      <div class="row"><div class="col">(min) {{weatherData?.temp_min}} | (max) {{weatherData?.temp_max}}</div></div>
-<div class="row"><div class="col">(visibility) {{weatherData?.visibility}} </div></div>
-      <div class="row">
-        <div class="col">(Humidity) {{weatherData?.humidity}} | (Wind) {{weatherData?.windSpeed}} </div>
-      </div>
+    <div class="col-md-4 center py-5">
+      <h3>[Visibility] {{weatherData?.visibility}}</h3>
+      <h3>[Humidity] {{weatherData?.humidity}}</h3>
+      <h3>[Wind] {{weatherData?.windSpeed}}</h3>
     </div>
-    <div class="col"></div>
   </div>
-  
 </div>
 <!------------------------Display Extended Forecast below here-------------------------------->
 <div class="container-fluid extForecast d-flex justify-content-center">
- <!--  <app-ext-forecast></app-ext-forecast> -->
+  <!--  <app-ext-forecast></app-ext-forecast> -->
+  <div class="row center padding">
+    <p-card class="padding pad" header="Simple Card" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
+      <div> Extended forecast </div>
+    </p-card>
+    <p-card class="padding pad" header="Simple Card" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
+      <div> Extended forecast </div>
+    </p-card>
+    <p-card class="padding pad" header="Simple Card" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
+      <div> Extended forecast </div>
+    </p-card>
+    <p-card class="padding pad" header="Simple Card" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
+      <div> Extended forecast </div>
+    </p-card>
+    <p-card class="pad" header="Simple Card" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
+      <div> Extended forecast </div>
+    </p-card>
+  </div>
 </div>
