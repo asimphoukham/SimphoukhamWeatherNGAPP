@@ -3,7 +3,6 @@ export interface IWeather {
   lat: number;
   weatherMain: string;
   description: string;
-  icon: string;
   temp: number;
   pressure: number;
   humidity: number;
@@ -25,9 +24,11 @@ export interface IWeather {
   temp_min: number;
   visibility: number;
   description: string;
+  icon: string;
 }
 export interface IForecast {
   temp: number;
+  /* visibility: number; */
   temp_min: number;
   temp_max: number;
   pressure: number;
@@ -38,11 +39,6 @@ export interface IForecast {
   windSpeed: number;
   windDeg: number;
   dt: string;
-  country: string;
-  timezone: number;
   id: number;
   name: string;
-  lon: number;
-  lat: number;
-  poulation: number;
 }
