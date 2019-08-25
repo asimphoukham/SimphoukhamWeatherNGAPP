@@ -11,27 +11,23 @@ import { ForecastService } from 'src/app/shared/services/forecast.service';
 })
 export class SearchBarComponent implements OnInit, OnDestroy {
   private searchSubscription: Subscription;
-  searchList: string[] = [];
+  city: string;
 
   constructor(private searchService: SearchBarService,
               private SWeather: WeatherService,
               private SForecast: ForecastService) { }
 
   ngOnInit() {
+    this.city = '';
     this.searchSubscription = this.searchService.getSearchBar()
       .subscribe(listItem => {
-        this.searchList.push(listItem);
       });
   }
-  addSearchItem(value: string) {
-    console.log('addSearch', value);
-    this.searchService.setSearchBar(value);
+  async searchCity() {
+      await this.SWeather.getWeatherData(this.city);
+      await this.SForecast.getForecastData(this.city);
+    }
 
-  }
-  getCityData(e: any) {
-    console.log(e.target.innerText);
-    // changes
-  }
   ngOnDestroy(): void {
     this.searchSubscription.unsubscribe();
   }

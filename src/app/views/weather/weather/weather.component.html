@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg mt-3">(DATE WILL GO HERE)
+    <div class="col-lg mt-3">
+      <h5>{{today | date:'fullDate'}}</h5>
+      <h5>{{today | date:'h:mm a z'}}</h5>
       <!--  <app-date-time></app-date-time>  -->
     </div>
     <div class="col-lg mt-4">
@@ -12,50 +14,43 @@
   </div>
 </div>
 <!-------------------------Display Forecast below here---------------------------------------->
-<div class="container-fluid mt-4">
+<div  *ngIf="weatherData" class="container-fluid mt-4 weatherBg">
   <!--  <app-forecast></app-forecast> -->
-  <div class="row">
+  <div class="row padBlack">
     <!--   <div class="col"></div> -->
     <div class="col-md-4 center">
       <h2>{{weatherData?.name}}</h2>
-      <div class="icon">(Icon)</div>
-      <h3>{{weatherData?.description}} </h3>
-    </div>
-    <!--     <div class="col-lg left">
-      <div class="row">
-        <div class="col-lg"></div>
-      </div>
-    </div> -->
-    <div class="col-md-4 center py-5">
-      <h3>{{weatherData?.temp}}</h3>
-      <h3> [Max] {{weatherData?.temp_max}}</h3>
-      <h3> [Min] {{weatherData?.temp_min}}</h3>
+      <!-- <div class="icon">(Icon) {{weatherData?.icon}} </div> -->
+      <img src="http://openweathermap.org/img/w/{{weatherData?.icon}}.png" height="110">
+      <h2>{{weatherData?.description}}</h2>
     </div>
     <div class="col-md-4 center py-5">
-      <h3>[Visibility] {{weatherData?.visibility}}</h3>
-      <h3>[Humidity] {{weatherData?.humidity}}</h3>
-      <h3>[Wind] {{weatherData?.windSpeed}}</h3>
+      <h3>{{weatherData?.temp}} F</h3>
+      <h3> Max: {{weatherData?.temp_max}}</h3>
+      <h3> Min: {{weatherData?.temp_min}}</h3>
+    </div>
+    <div class="col-md-4 center py-5">
+      <h3> Visibility: {{weatherData?.visibility}}</h3>
+      <h3> Humidity: {{weatherData?.humidity}}</h3>
+      <h3> Wind: {{weatherData?.windSpeed}}</h3>
     </div>
   </div>
 </div>
 <!------------------------Display Extended Forecast below here-------------------------------->
-<div class="container-fluid extForecast d-flex justify-content-center">
-  <!--  <app-ext-forecast></app-ext-forecast> -->
-  <div class="row center padding">
-    <p-card class="padding pad" header="Simple Card" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
-      <div> Extended forecast </div>
-    </p-card>
-    <p-card class="padding pad" header="Simple Card" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
-      <div> Extended forecast </div>
-    </p-card>
-    <p-card class="padding pad" header="Simple Card" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
-      <div> Extended forecast </div>
-    </p-card>
-    <p-card class="padding pad" header="Simple Card" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
-      <div> Extended forecast </div>
-    </p-card>
-    <p-card class="pad" header="Simple Card" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
-      <div> Extended forecast </div>
-    </p-card>
+<div *ngIf="forecastData && forecastData.length > 0" class="container-fluid d-flex justify-content-center">
+  <div class="row center padding d-flex justify-content-center">
+    <div *ngFor="let item of forecastData">
+      <div class="mr-2 padding"> 
+        <p-card header="{{item.dt}}" [style]="{ width: '280px'}" styleClass="ui-card-shadow">
+          <div> <img src="http://openweathermap.org/img/w/{{item.icon}}.png"> </div>
+          <div><b>{{item.description}}</b></div>
+          <div><b>Temp:</b> {{item.temp}} F</div>
+          <div><b>Max:</b> {{item.temp_max}}</div>
+          <div><b>Min:</b> {{item.temp_min}}</div>
+          <div><b>Humidity:</b> {{item.humidity}}</div>
+          <div><b>Wind:</b> {{item.windSpeed}} </div>
+        </p-card>
+      </div>
+    </div>
   </div>
 </div>

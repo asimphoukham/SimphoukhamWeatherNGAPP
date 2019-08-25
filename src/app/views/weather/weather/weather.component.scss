@@ -15,15 +15,18 @@ h1{
 
 h2{
     color: white;
-    -webkit-text-stroke: 1px #300b30;
+   // -webkit-text-stroke: 1px #300b30;
     font-weight: bold;
     font-size: 3rem;
 }
 
 h3{
     color: white;
-    -webkit-text-stroke: 1px #300b30;
     font-weight: bold;
+}
+
+h5{
+    color: white;
 }
 .center{
     text-align: center;
@@ -34,11 +37,34 @@ h3{
 }
 
 .padding{
-    padding-right: 1rem;
+    margin-top: 2rem;   
+  /*   background-color: #ffffff;
+    box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 2rem;
+    margin: 2rem;
+    width: 19rem;
+    height: 30rem;
+    justify-items: center;
+    cursor: pointer;
+    border-radius: 1.75rem;
+    animation: 1.25s ease-in-out 0ms 1 fadein;
+    color: #443282; */
 }
 
-.pad{
-    padding-top: 1rem;
+.icon{
+    font-size: 5rem;
 }
 
+.weatherBg{
+    background-color: black;
+    opacity: 0.8;
+    max-width: 90rem;
+}
 
+.padBlack{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}

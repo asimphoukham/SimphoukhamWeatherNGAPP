@@ -3,9 +3,13 @@
   <!--   <div class="ui-g-4">
         <!-- Enter City Name --
     </div> -->
-    <div class="ui">
-        <input #pInputText type="text" placeholder="Enter location"/>
-        <button (click) = 'addSearchItem(pInputText.value)' pButton type="button" class="ui-button-raised success" label="Search"></button>
-    </div>
+    <div class="ui"> <!----wrap searchbar in a form (ngSubmit) put type submit so when enter is pressed it will run
+        searchCity()------------>
+        
+        <form (ngSubmit)="searchCity()">
+            <input #pInputText type="text" [(ngModel)]='city' placeholder="Enter City" name="city"/> <!--ngModel-->
+            <button pButton type="submit" class="ui-button-raised success" label="Search"></button>
+        </form>
+       </div>
 </div>
 </div>
